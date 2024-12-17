@@ -2,143 +2,177 @@
 
 import * as React from "react"
 import Link from "next/link"
-
-import { cn } from "~/lib/utils"
+import logo from "~/static/Pictures/srml_logo.jpg";
+import Image from "next/image";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "~/components/ui/navigation-menu"
-
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-]
-
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "~/components/ui/dialog"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs"
 export function Navbar() {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <Link
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
-                    <div className="h-6 w-6" />
-                    <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
-                    </div>
-                    <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components built with Radix UI and
-                      Tailwind CSS.
-                    </p>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
-            </NavigationMenuLink>
+    <>
+      <header>
+        <ul className="flex flex-row items-center justify-around bg-endings text-white">
+          <li>
+            <Link href="/" legacyBehavior passHref>
+              <Image src={logo} alt="logo" />
+            </Link>
+          </li>
+          <Link
+            href="/RoomsandSuites"
+            className="cursor-pointer p-2 hover:bg-white hover:text-endings"
+          >
+            Rooms and Suites
           </Link>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
-  )
+          <Link
+            href="/Amenities"
+            className="cursor-pointer p-2 hover:bg-white hover:text-endings"
+          >
+            Amenities
+          </Link>
+          <Link
+            href="/AreaActivities"
+            className="cursor-pointer p-2 hover:bg-white hover:text-endings"
+          >
+            Area Activities
+          </Link>
+
+          {/*Popup for rules cause another page is too much for something like this*/}
+          <Dialog>
+            <DialogTrigger>
+              <li>
+                <a className="cursor-pointer p-2 hover:bg-white hover:text-endings">
+                  Rules and Policies
+                </a>
+              </li>
+            </DialogTrigger>
+            <DialogContent className="w-1/2 max-w-full">
+              <DialogHeader>
+                <DialogTitle className="items-center text-center text-endings">
+                  Rules and Policies
+                </DialogTitle>
+                <Tabs defaultValue="gen">
+                  <TabsList className="flex w-full flex-row justify-center bg-none">
+                    <TabsTrigger value="gen">General Policies</TabsTrigger>
+                    <TabsTrigger value="dogs">Dog Policies</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="gen">
+                    <DialogDescription className="flex flex-col items-center justify-evenly overflow-y-scroll p-2 text-center text-endings">
+                      <ul>
+                        <li className="p-2">
+                          ALL RESERVATIONS MUST BE MADE WITH A CREDIT CARD.
+                        </li>
+                        <li className="p-2">
+                          CANCELLATIONS MUST BE MADE BY PHONE TO A MEMBER OF
+                          STAFF AT THE LODGE (NO EMAIL OR VOICE MAIL MESSAGES
+                          ACCEPTED).
+                        </li>
+                        <li className="p-2">
+                          THERE IS NO CANCELLATION AFTER 48 HOURS FOR ROOMS AND
+                          7 DAYS FOR THE SUITES, IF THE RESERVATION IS CANCELLED
+                          AFTER 48 HOURS FOR ROOMS AND 7 DAYS FOR SUITES THE
+                          FULL AMOUNT OF THE STAY WILL BE CHARGED. <br /> No
+                          cancellation allowed during Fryeburg Fair week;
+                        </li>
+                        <li className="p-2">
+                          CHECK IN IS ANYTIME AFTER 4 P.M. TO 9 P.M. CHECK OUT
+                          IS 10 A.M. (ROOMS) 10.30 A.M. (SUITES)
+                        </li>
+                        <li className="p-2">
+                          ALL ROOMS ARE NON-SMOKING. SHOULD GUESTS WISH TO
+                          SMOKE, SEATING AND ASHTRAYS ARE PROVIDED OUTSIDE.
+                        </li>
+                        <li className="text-xs">
+                          Saco River Motor Lodge will not be held liable for any
+                          injury, damage or loss involving the Canoeing,
+                          kayaking, and tubing activities.
+                        </li>
+                      </ul>
+                    </DialogDescription>
+                  </TabsContent>
+                  <TabsContent value="dogs">
+                    <DialogDescription className="flex w-full flex-col items-center justify-evenly p-2 text-center text-endings">
+                      <ul>
+                        <li className="p-2">
+                          WE ACCEPT DOGS IN SOME MOTEL ROOMS AND SUITES. YOU
+                          MUST LET US KNOW WHEN MAKING A RESERVATION THAT YOU
+                          INTEND TO BRING YOUR DOG WITH YOU. THE ONLY CHARGE IS
+                          AN ADDITIONAL CLEANING FEE OF $25 FOR THE ROOMS AND
+                          $50 FOR THE SUITES NO MATTER HOW LONG YOU STAY.
+                        </li>
+                        <li className="p-2">
+                          SACO RIVER MOTOR LODGE WELCOMES RESPONSIBLE DOG OWNERS
+                          AND THE FOLLOWING GUIDELINES ARE SET OUT TO ENABLE
+                          BOTH YOUR DOGS AND OTHER GUESTS TO ENJOY THEIR STAY
+                          WITH US:
+                        </li>
+                        <li className="p-2">
+                          DOGS MUST BE KEPT ON A LEASH AT ALL TIMES
+                        </li>
+                        <li className="p-2">
+                          DOGS SHOULD BE WALKED ON THE FIELD AT THE SIDE OF THE
+                          MOTEL, AND GUESTS WILL BE EXPECTED TO CLEAN UP AFTER
+                          THEIR DOGS.
+                        </li>
+                        <li className="p-2">
+                          PLEASE KEEP YOUR DOGS OFF THE BEDS.
+                        </li>
+                        <li className="p-2">
+                          PLEASE DO NOT USE OUR ROOM TOWELS ON YOUR DOG- IF YOU
+                          CALL INTO THE OFFICE WE WILL BE HAPPY TO PROVIDE
+                          TOWELS FOR THEIR USE.
+                        </li>
+                        <li className="p-2">
+                          DOGS ARE NOT ALLOWED IN THE POOL AREA.
+                        </li>
+
+                        <li className="p-2">
+                          DOGS SHOULD NOT, UNDER ANY CIRCUMSTANCES, BE LEFT
+                          UNATTENDED IN A ROOM, NOT EVEN IN A CRATE, AS
+                          EXCESSIVE BARKING CAN ANNOY OTHER GUESTS.
+                        </li>
+                        <li className="p-2">
+                          SHOULD YOU WISH TO GO OUT WITHOUT YOUR DOG, PLEASE
+                          SPEAK TO US AND WE WILL TRY TO MAKE THE NECESSARY
+                          ARRANGEMENTS FOR YOU.
+                        </li>
+                        <li className="text-xs">
+                          Saco River Motor Lodge will not be held liable for any
+                          injury, damage or loss involving the Canoeing,
+                          kayaking, and tubing activities.
+                        </li>
+                      </ul>
+                    </DialogDescription>
+                  </TabsContent>
+                </Tabs>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
+
+          <Link
+            href="/"
+            className="cursor-pointer p-2 hover:bg-white hover:text-endings"
+          >
+            Contact Us
+          </Link>
+          <Link
+            className="cursor-pointer bg-red-600 p-2 hover:bg-white hover:text-endings"
+            href="https://reservation.asiwebres.com/v4/RoomAvailability.aspx?id=00e22842fd1a4b53bf3d6654ca2f1b9f&lang=en&Curr=1"
+          >
+            Make a Reservation
+          </Link>
+        </ul>
+      </header>
+    </>
+  );
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  )
-})
-ListItem.displayName = "ListItem"
+
+//                   <h3 className="underline">Dog Policies</h3>
+
+//                   </ul>
