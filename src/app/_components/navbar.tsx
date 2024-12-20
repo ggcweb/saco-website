@@ -17,27 +17,27 @@ export function Navbar() {
   return (
     <>
       <header>
-        <ul className="flex flex-row items-center justify-around bg-endings text-white">
+        <ul className="flex flex-col items-center justify-around bg-endings text-white md:flex-row md:p-2">
           <li>
             <Link href="/" legacyBehavior passHref>
-              <Image src={logo} alt="logo" />
+              <Image src={logo} alt="logo" className="cursor-pointer" />
             </Link>
           </li>
           <Link
             href="/RoomsandSuites"
-            className="cursor-pointer p-2 hover:bg-white hover:text-endings"
+            className="hidden cursor-pointer p-2 hover:bg-white hover:text-endings md:flex"
           >
             Rooms and Suites
           </Link>
           <Link
             href="/Amenities"
-            className="cursor-pointer p-2 hover:bg-white hover:text-endings"
+            className="hidden cursor-pointer p-2 hover:bg-white hover:text-endings md:flex"
           >
             Amenities
           </Link>
           <Link
             href="/AreaActivities"
-            className="cursor-pointer p-2 hover:bg-white hover:text-endings"
+            className="hidden cursor-pointer p-2 hover:bg-white hover:text-endings md:flex"
           >
             Area Activities
           </Link>
@@ -51,7 +51,7 @@ export function Navbar() {
                 </a>
               </li>
             </DialogTrigger>
-            <DialogContent className="w-1/2 max-w-full">
+            <DialogContent className="w-full max-w-full overflow-y-scroll lg:w-1/2">
               <DialogHeader>
                 <DialogTitle className="items-center text-center text-endings">
                   Rules and Policies
@@ -62,7 +62,7 @@ export function Navbar() {
                     <TabsTrigger value="dogs">Dog Policies</TabsTrigger>
                   </TabsList>
                   <TabsContent value="gen">
-                    <DialogDescription className="flex flex-col items-center justify-evenly overflow-y-scroll p-2 text-center text-endings">
+                    <DialogDescription className="flex flex-col items-center justify-evenly overflow-y-scroll p-2 text-center text-xs text-endings lg:text-sm">
                       <ul>
                         <li className="p-2">
                           ALL RESERVATIONS MUST BE MADE WITH A CREDIT CARD.
@@ -96,14 +96,18 @@ export function Navbar() {
                     </DialogDescription>
                   </TabsContent>
                   <TabsContent value="dogs">
-                    <DialogDescription className="flex w-full flex-col items-center justify-evenly p-2 text-center text-endings">
+                    <DialogDescription className="flex w-full flex-col items-center justify-evenly p-2 text-center text-xs text-endings lg:text-sm">
                       <ul>
+                        <li className="p-2">
+                          MAXIMUM OF 2 DOGS PER ROOM AND SUITE
+                        </li>
                         <li className="p-2">
                           WE ACCEPT DOGS IN SOME MOTEL ROOMS AND SUITES. YOU
                           MUST LET US KNOW WHEN MAKING A RESERVATION THAT YOU
                           INTEND TO BRING YOUR DOG WITH YOU. THE ONLY CHARGE IS
-                          AN ADDITIONAL CLEANING FEE OF $25 FOR THE ROOMS AND
-                          $50 FOR THE SUITES NO MATTER HOW LONG YOU STAY.
+                          AN ADDITIONAL CLEANING FEE OF <b>$25/night</b> FOR THE ROOMS
+                          AND <b>$50/night</b> FOR THE SUITES NO MATTER HOW LONG YOU
+                          STAY.
                         </li>
                         <li className="p-2">
                           SACO RIVER MOTOR LODGE WELCOMES RESPONSIBLE DOG OWNERS
@@ -155,8 +159,8 @@ export function Navbar() {
           </Dialog>
 
           <Link
-            href="/"
-            className="cursor-pointer p-2 hover:bg-white hover:text-endings"
+            href="#footer"
+            className="hidden cursor-pointer p-2 hover:bg-white hover:text-endings md:flex"
           >
             Contact Us
           </Link>

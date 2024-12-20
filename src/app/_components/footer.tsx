@@ -2,10 +2,10 @@
 
 export function Footer() {
   return (
-    <footer className="w-full bg-endings text-white flex flex-col justify-evenly bottom-0 relative">
-      <h3 className="text-2xl items-center flex flex-row justify-center">Come experience the White Mountains and Saco River and explore
+    <footer id="footer" className="w-full bg-endings text-white flex flex-col justify-evenly bottom-0 relative">
+      <h3 className="md:text-2xl text-center flex flex-row justify-center pt-4 pb-4">Come experience the White Mountains and Saco River and explore
         all the possibilities right outside our door ...</h3>
-      <div className="w-full flex flex-row justify-around items-center">
+      <div className="w-full flex flex-col md:flex-row justify-around items-center">
         <div className="w-1/2 text-center">
           <ul>
             <li>Phone: 603-447-3720</li>
