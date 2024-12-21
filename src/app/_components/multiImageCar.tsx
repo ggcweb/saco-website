@@ -13,6 +13,7 @@ import Link from "next/link"
 type cardData = {
   name: string;
   picture: StaticImageData;
+  desc?: string;
   link: string;
 };
 
@@ -20,11 +21,12 @@ type cards = {
   data : cardData[];
   cardColor: string;
   backColor: string;
+  textColor: string;
   link: boolean;
 }
-export const MultiImageSlider: React.FC<cards> = ({ data, cardColor, backColor, link }) => {
+export const MultiImageSlider: React.FC<cards> = ({ data, cardColor, backColor, link, textColor }) => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: false }),
+    Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: false, stopOnFocusIn: true}),
   )
 
   return (
@@ -36,7 +38,7 @@ export const MultiImageSlider: React.FC<cards> = ({ data, cardColor, backColor, 
               {link && (
                 <Link href={_.link}>
                   <Card className="border-none">
-                    <CardContent className="flex aspect-square items-center justify-center p-4 flex-col gap-4 text-white rounded-xl" style={{background: cardColor}}>
+                    <CardContent className="flex aspect-square items-center justify-center p-4 flex-col gap-4 rounded-xl" style={{background: cardColor, color: textColor}}>
                       <span className="text-2xl font-semibold">{_.name}</span>
                       <Image src={_.picture} alt="" className="w-80 h-80"/>
                     </CardContent>
@@ -45,7 +47,7 @@ export const MultiImageSlider: React.FC<cards> = ({ data, cardColor, backColor, 
               )}
               {!link && (
                   <Card className="border-none">
-                    <CardContent className="flex aspect-square items-center justify-center p-4 flex-col gap-4 text-white rounded-xl" style={{background: cardColor}}>
+                    <CardContent className="flex aspect-square items-center justify-center p-4 flex-col gap-4 rounded-xl" style={{background: cardColor, color: textColor}}>
                       <span className="text-2xl font-semibold">{_.name}</span>
                       <Image src={_.picture} alt="" className="w-80 h-80"/>
                     </CardContent>

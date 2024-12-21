@@ -17,7 +17,7 @@ type ImageProps = {
 export const ImageSlider: React.FC<ImageProps> = ({ images, carWidth, styling, speed }) => {
   // const arr = [{crOne}.crOne, {crTwo}.crTwo, {crThree}.crThree];
   const plugin = React.useRef(
-    Autoplay({ delay: speed, stopOnInteraction: false, stopOnMouseEnter: true }),
+    Autoplay({ delay: speed, stopOnInteraction: false, stopOnMouseEnter: false, stopOnFocusIn: true }),
   )
   return(
     // This is the default

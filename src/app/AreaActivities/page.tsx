@@ -48,13 +48,13 @@ export default function Activities() {
   const activities : cardDataTwo[] = [
     {name: "Mt Washington", picture: {mtWashington}.mtWashington, link: "/AreaActivities/MtWashington"},
     {name: "Hiking", picture: {hiking}.hiking, link: "/AreaActivities/Hiking"},
-    {name: "Cranmore", picture: {cranmore}.cranmore, link: "/AreaActivities/Cranmore"},
+    // {name: "Cranmore", picture: {cranmore}.cranmore, link: "/AreaActivities/Cranmore"},
     {name: "Settlers Green", picture: {settlersGreen}.settlersGreen, link: "/AreaActivities/SettlersGreen"},
     {name: "Dining", picture: {dine}.dine, link: "/AreaActivities/Dining"},
     {name: "Foliage", picture: {foliage}.foliage, link: "/AreaActivities/Foliage"},
     {name: "Fryeburg Fair", picture: {fair}.fair, link: "/AreaActivities/Fair"},
     {name: "Train", picture: {train}.train, link: "/AreaActivities/Train"},
-    {name: "Kayaking", picture: {kayak}.kayak, link: "/AreaActivities/Kayak"},
+    {name: "Summer Fun", picture: {kayak}.kayak, link: "/AreaActivities/Kayak"},
     {name: "Storyland", picture: {storyland}.storyland, link: "/AreaActivities/Storyland"}
   ]
   return (
@@ -62,7 +62,7 @@ export default function Activities() {
       <h3 className="pt-2 text-center text-2xl font-bold">
         Come enjoy all the seasons with us!
       </h3>
-      <MultiImageSlider data={activities} backColor={"white"} cardColor={"rgb(4, 97, 154)"} link={true}/>
+      <MultiImageSlider data={activities} backColor={"white"} textColor={"white"} cardColor={"rgb(4, 97, 154)"} link={true}/>
       <Accordion type="multiple">
         <AccordionItem value="spring">
           <AccordionTrigger className="m-8 mb-0 mt-2 w-8/12 bg-red-600 text-white">

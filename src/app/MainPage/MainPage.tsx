@@ -37,13 +37,13 @@ export default function MainPage() {
   const activities : cardData[] = [
     {name: "Mt Washington", picture: {mtWashington}.mtWashington, link: "/AreaActivities/MtWashington"},
     {name: "Hiking", picture: {hiking}.hiking, link: "/AreaActivities/Hiking"},
-    {name: "Cranmore", picture: {cranmore}.cranmore, link: "/AreaActivities/Cranmore"},
+    // {name: "Cranmore", picture: {cranmore}.cranmore, link: "/AreaActivities/Cranmore"},
     {name: "Settlers Green", picture: {settlersGreen}.settlersGreen, link: "/AreaActivities/SettlersGreen"},
     {name: "Dining", picture: {dine}.dine, link: "/AreaActivities/Dining"},
     {name: "Foliage", picture: {foliage}.foliage, link: "/AreaActivities/Foliage"},
     {name: "Fryeburg Fair", picture: {fair}.fair, link: "/AreaActivities/Fair"},
     {name: "Train", picture: {train}.train, link: "/AreaActivities/Train"},
-    {name: "Kayaking", picture: {kayak}.kayak, link: "/AreaActivities/Kayak"},
+    {name: "Summer Fun", picture: {kayak}.kayak, link: "/AreaActivities/Kayak"},
     {name: "Storyland", picture: {storyland}.storyland, link: "/AreaActivities/Storyland"}
   ]
 
@@ -77,8 +77,7 @@ export default function MainPage() {
               Tax free outlets, and ask us about our shopping deals!</p>
             <br/>
             <p>If you are looking to go out for the evening, we have many fine restaurants in the Mt. Washington Valley
-              area and also Western Maine; check out the Lodge Amenities page for discounts just for our guests at
-              Applebees, Shalimar and the Fryeburg House of Pizza.</p>
+              area and also Western Maine</p>
           </div>
             {/*Events*/}
             <Image src={train} alt="Random" className="lg:w-1/2 w-full"/>
@@ -88,11 +87,11 @@ export default function MainPage() {
             Whether you are looking for a rigorous outdoor adventure, a fun filled family vacation, or just a quiet or romantic get-away, Conway NH and the Mount Washington Valley area has just what you are looking for
           </h2>
         </div>
-        <MultiImageSlider data={activities} backColor={"rgb(4, 97, 154)"} cardColor={"rgb(4, 97, 154)"} link={true}/>
+        <MultiImageSlider data={activities} backColor={"rgb(4, 97, 154)"} textColor={"white"} cardColor={"rgb(4, 97, 154)"} link={true}/>
       {/* Room Info */}
       <div className="flex flex-col justify-evenly p-2 pt-4 text-center">
         <h3 className="text-lg lg:text-2xl font-bold">Our Rooms</h3>
-          <MultiImageSlider data={rooms} backColor={"white"} cardColor={"rgb(4, 97, 154)"} link={false}/>
+          <MultiImageSlider data={rooms} backColor={"white"} textColor={"white"} cardColor={"rgb(4, 97, 154)"} link={false}/>
         <Link href="/RoomsandSuites" className="pt-4"><Button className="bg-endings p-4 pt-6 pb-6 text-base hover:bg-white hover:text-endings hover:outline hover:outline-2 hover:outline-offset-2">More Information</Button></Link>
       </div>
     </>

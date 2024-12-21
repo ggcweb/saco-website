@@ -64,7 +64,7 @@ export default function Train() {
             </CardHeader>
             <CardContent className="flex flex-col lg:flex-row items-center justify-center">
               <Image src={train.picture} alt="" className="w-80 h-80" />
-              <p className="text-sm items-baseline">{train.desc}</p>
+              <p className="text-sm items-baseline p-4">{train.desc}</p>
             </CardContent>
           </Card>
         ))}
