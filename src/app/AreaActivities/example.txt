@@ -1,0 +1,4 @@
+<div className="flex flex-col items-center bg-input">
+        <h3 className="text-sm lg:text-2xl pt-4 underline font-bold">Mount Washington</h3>
+          <Image src={mtWash} alt="" className="w-6/12 pt-4 pb-4" />
+      </div>

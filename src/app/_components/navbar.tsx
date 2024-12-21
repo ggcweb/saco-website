@@ -76,8 +76,12 @@ export function Navbar() {
                           THERE IS NO CANCELLATION AFTER 48 HOURS FOR ROOMS AND
                           7 DAYS FOR THE SUITES, IF THE RESERVATION IS CANCELLED
                           AFTER 48 HOURS FOR ROOMS AND 7 DAYS FOR SUITES THE
-                          FULL AMOUNT OF THE STAY WILL BE CHARGED. <br /> No
-                          cancellation allowed during Fryeburg Fair week;
+                          FULL AMOUNT OF THE STAY WILL BE CHARGED.
+                        </li>
+                        <li className="p-2">
+                          <b className="text-base">
+                            No cancellation allowed during Fryeburg Fair week
+                          </b>
                         </li>
                         <li className="p-2">
                           CHECK IN IS ANYTIME AFTER 4 P.M. TO 9 P.M. CHECK OUT
@@ -85,7 +89,11 @@ export function Navbar() {
                         </li>
                         <li className="p-2">
                           ALL ROOMS ARE NON-SMOKING. SHOULD GUESTS WISH TO
-                          SMOKE, SEATING AND ASHTRAYS ARE PROVIDED OUTSIDE.
+                          SMOKE, SEATING IS PROVIDED OUTSIDE.
+                        </li>
+                        <li className="p-2">
+                          IN THE EVENT OF A LATE ARRIVAL PLEASE NOTIFY THE FRONT
+                          DESK AND WE WILL MAKE NECESSARY ARRANGEMENTS
                         </li>
                         <li className="text-xs">
                           Saco River Motor Lodge will not be held liable for any
@@ -96,59 +104,42 @@ export function Navbar() {
                     </DialogDescription>
                   </TabsContent>
                   <TabsContent value="dogs">
-                    <DialogDescription className="flex w-full flex-col items-center justify-evenly p-2 text-center text-xs text-endings lg:text-sm">
+                    <DialogDescription
+                      className="flex w-full flex-col items-center justify-evenly p-2 text-center text-xs text-endings lg:text-sm">
                       <ul>
+                        <li className="p-2">MAXIMUM OF 2 DOGS PER ROOM AND SUITE</li>
                         <li className="p-2">
-                          MAXIMUM OF 2 DOGS PER ROOM AND SUITE
+                          WE ACCEPT DOGS IN SOME MOTEL ROOMS AND SUITES. YOU MUST LET US
+                          KNOW WHEN MAKING A RESERVATION THAT YOU INTEND TO BRING YOUR DOG
+                          WITH YOU. THE ONLY CHARGE IS AN ADDITIONAL CLEANING FEE OF{" "}
+                          <b>$25/night</b> FOR THE ROOMS AND <b>$50/night</b> FOR THE SUITES
+                          NO MATTER HOW LONG YOU STAY.
                         </li>
                         <li className="p-2">
-                          WE ACCEPT DOGS IN SOME MOTEL ROOMS AND SUITES. YOU
-                          MUST LET US KNOW WHEN MAKING A RESERVATION THAT YOU
-                          INTEND TO BRING YOUR DOG WITH YOU. THE ONLY CHARGE IS
-                          AN ADDITIONAL CLEANING FEE OF <b>$25/night</b> FOR THE ROOMS
-                          AND <b>$50/night</b> FOR THE SUITES NO MATTER HOW LONG YOU
-                          STAY.
+                          SACO RIVER MOTOR LODGE WELCOMES RESPONSIBLE DOG OWNERS AND THE
+                          FOLLOWING GUIDELINES ARE SET OUT TO ENABLE BOTH YOUR DOGS AND
+                          OTHER GUESTS TO ENJOY THEIR STAY WITH US:
                         </li>
+                        <li className="p-2">DOGS MUST BE KEPT ON A LEASH AT ALL TIMES</li>
                         <li className="p-2">
-                          SACO RIVER MOTOR LODGE WELCOMES RESPONSIBLE DOG OWNERS
-                          AND THE FOLLOWING GUIDELINES ARE SET OUT TO ENABLE
-                          BOTH YOUR DOGS AND OTHER GUESTS TO ENJOY THEIR STAY
-                          WITH US:
+                          DOGS SHOULD BE WALKED ON THE FIELD AT THE SIDE OF THE MOTEL, AND
+                          GUESTS WILL BE EXPECTED TO CLEAN UP AFTER THEIR DOGS.
                         </li>
+                        <li className="p-2">PLEASE KEEP YOUR DOGS OFF THE BEDS.</li>
                         <li className="p-2">
-                          DOGS MUST BE KEPT ON A LEASH AT ALL TIMES
+                          PLEASE DO NOT USE OUR ROOM TOWELS ON YOUR DOG
                         </li>
-                        <li className="p-2">
-                          DOGS SHOULD BE WALKED ON THE FIELD AT THE SIDE OF THE
-                          MOTEL, AND GUESTS WILL BE EXPECTED TO CLEAN UP AFTER
-                          THEIR DOGS.
-                        </li>
-                        <li className="p-2">
-                          PLEASE KEEP YOUR DOGS OFF THE BEDS.
-                        </li>
-                        <li className="p-2">
-                          PLEASE DO NOT USE OUR ROOM TOWELS ON YOUR DOG- IF YOU
-                          CALL INTO THE OFFICE WE WILL BE HAPPY TO PROVIDE
-                          TOWELS FOR THEIR USE.
-                        </li>
-                        <li className="p-2">
-                          DOGS ARE NOT ALLOWED IN THE POOL AREA.
-                        </li>
+                        <li className="p-2">DOGS ARE NOT ALLOWED IN THE POOL AREA.</li>
 
                         <li className="p-2">
-                          DOGS SHOULD NOT, UNDER ANY CIRCUMSTANCES, BE LEFT
-                          UNATTENDED IN A ROOM, NOT EVEN IN A CRATE, AS
-                          EXCESSIVE BARKING CAN ANNOY OTHER GUESTS.
-                        </li>
-                        <li className="p-2">
-                          SHOULD YOU WISH TO GO OUT WITHOUT YOUR DOG, PLEASE
-                          SPEAK TO US AND WE WILL TRY TO MAKE THE NECESSARY
-                          ARRANGEMENTS FOR YOU.
+                          DOGS SHOULD NOT, UNDER ANY CIRCUMSTANCES, BE LEFT UNATTENDED IN A
+                          ROOM, NOT EVEN IN A CRATE, AS EXCESSIVE BARKING CAN ANNOY OTHER
+                          GUESTS.
                         </li>
                         <li className="text-xs">
-                          Saco River Motor Lodge will not be held liable for any
-                          injury, damage or loss involving the Canoeing,
-                          kayaking, and tubing activities.
+                          Saco River Motor Lodge will not be held liable for any injury,
+                          damage or loss involving the Canoeing, kayaking, and tubing
+                          activities.
                         </li>
                       </ul>
                     </DialogDescription>

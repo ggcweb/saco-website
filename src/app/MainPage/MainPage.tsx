@@ -88,7 +88,7 @@ export default function MainPage() {
             Whether you are looking for a rigorous outdoor adventure, a fun filled family vacation, or just a quiet or romantic get-away, Conway NH and the Mount Washington Valley area has just what you are looking for
           </h2>
         </div>
-        <MultiImageSlider data={activities} backColor={"rgb(4, 97, 154)"} cardColor={"red"} link={true}/>
+        <MultiImageSlider data={activities} backColor={"rgb(4, 97, 154)"} cardColor={"rgb(4, 97, 154)"} link={true}/>
       {/* Room Info */}
       <div className="flex flex-col justify-evenly p-2 pt-4 text-center">
         <h3 className="text-lg lg:text-2xl font-bold">Our Rooms</h3>

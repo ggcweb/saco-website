@@ -110,15 +110,23 @@ export default function RoomAndSuites() {
               THERE IS NO CANCELLATION AFTER 48 HOURS FOR ROOMS AND 7 DAYS FOR
               THE SUITES, IF THE RESERVATION IS CANCELLED AFTER 48 HOURS FOR
               ROOMS AND 7 DAYS FOR SUITES THE FULL AMOUNT OF THE STAY WILL BE
-              CHARGED. <br /> No cancellation allowed during Fryeburg Fair week;
+              CHARGED.
+            </li>
+            <li className="p-2">
+              <b className="text-base">
+                No cancellation allowed during Fryeburg Fair week
+              </b>
             </li>
             <li className="p-2">
               CHECK IN IS ANYTIME AFTER 4 P.M. TO 9 P.M. CHECK OUT IS 10 A.M.
               (ROOMS) 10.30 A.M. (SUITES)
             </li>
             <li className="p-2">
-              ALL ROOMS ARE NON-SMOKING. SHOULD GUESTS WISH TO SMOKE, SEATING
-              AND ASHTRAYS ARE PROVIDED OUTSIDE.
+              ALL ROOMS ARE NON-SMOKING. SHOULD GUESTS WISH TO SMOKE, SEATING IS
+              PROVIDED OUTSIDE.
+            </li>
+            <li className="p-2">
+              IN THE EVENT OF A LATE ARRIVAL PLEASE NOTIFY THE FRONT DESK AND WE WILL MAKE NECESSARY ARRANGEMENTS
             </li>
             <li className="text-xs">
               Saco River Motor Lodge will not be held liable for any injury,
@@ -153,8 +161,7 @@ export default function RoomAndSuites() {
             </li>
             <li className="p-2">PLEASE KEEP YOUR DOGS OFF THE BEDS.</li>
             <li className="p-2">
-              PLEASE DO NOT USE OUR ROOM TOWELS ON YOUR DOG- IF YOU CALL INTO
-              THE OFFICE WE WILL BE HAPPY TO PROVIDE TOWELS FOR THEIR USE.
+              PLEASE DO NOT USE OUR ROOM TOWELS ON YOUR DOG
             </li>
             <li className="p-2">DOGS ARE NOT ALLOWED IN THE POOL AREA.</li>
 
@@ -162,10 +169,6 @@ export default function RoomAndSuites() {
               DOGS SHOULD NOT, UNDER ANY CIRCUMSTANCES, BE LEFT UNATTENDED IN A
               ROOM, NOT EVEN IN A CRATE, AS EXCESSIVE BARKING CAN ANNOY OTHER
               GUESTS.
-            </li>
-            <li className="p-2">
-              SHOULD YOU WISH TO GO OUT WITHOUT YOUR DOG, PLEASE SPEAK TO US AND
-              WE WILL TRY TO MAKE THE NECESSARY ARRANGEMENTS FOR YOU.
             </li>
             <li className="text-xs">
               Saco River Motor Lodge will not be held liable for any injury,
