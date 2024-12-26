@@ -157,7 +157,7 @@ export default function RoomAndSuites() {
             <li className="p-2">DOGS MUST BE KEPT ON A LEASH AT ALL TIMES</li>
             <li className="p-2">
               DOGS SHOULD BE WALKED ON THE FIELD AT THE SIDE OF THE MOTEL, AND
-              GUESTS WILL BE EXPECTED TO CLEAN UP AFTER THEIR DOGS.
+              GUESTS MUST CLEAN UP AFTER THEIR DOGS.
             </li>
             <li className="p-2">PLEASE KEEP YOUR DOGS OFF THE BEDS.</li>
             <li className="p-2">
@@ -167,7 +167,7 @@ export default function RoomAndSuites() {
 
             <li className="p-2">
               DOGS SHOULD NOT, UNDER ANY CIRCUMSTANCES, BE LEFT UNATTENDED IN A
-              ROOM, NOT EVEN IN A CRATE, AS EXCESSIVE BARKING CAN ANNOY OTHER
+              ROOM, NOT EVEN IN A CRATE, AS EXCESSIVE BARKING CAN DISTURB OTHER
               GUESTS.
             </li>
             <li className="text-xs">

@@ -58,7 +58,7 @@ export default function MainPage() {
       <ImageSlider images={[{crOne}.crOne, {crTwo}.crTwo, {crThree}.crThree, {crFour}.crFour, {crFive}.crFive, {crSix}.crSix]} carWidth={"w-full"} styling={"className=flex flex-row justify-center"} speed={5000}/>
         <div className="flex lg:flex-row w-full text-black flex-col">
           <div className="flex flex-col lg:w-1/2 text-center p-4 text-xs md:text-base">
-            <h3 className="text-sm lg:text-2xl">Welcome to the White Mountains and the Saco River Motel Lodge & Suites!</h3>
+            <h3 className="text-sm lg:text-2xl">Welcome to the White Mountains and the Saco River Motor Lodge & Suites!</h3>
             <br/>
             <p>The Saco River Motor Lodge is nestled in the beautiful woods on the peaceful Saco River. As a young
               family, we wanted to create and design our grounds with families in mind. Our grounds has a large pool,
