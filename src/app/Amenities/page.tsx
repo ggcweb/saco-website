@@ -1,8 +1,6 @@
 "use client"
 
 import * as React from "react"
-// import Link from "next/link"
-// import logo from "~/static/Pictures/srml_logo.jpg";
 import Image from "next/image";
 import P1 from "~/static/Pictures/amenities/bbq-area.jpg"
 import P2 from "~/static/Pictures/amenities/picnic.jpg"
