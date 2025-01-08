@@ -80,7 +80,7 @@ export default function RoomAndSuites() {
           backColor={"rgb(4, 97, 154)"}
           cardColor={"rgb(4, 97, 154)"}
           data={suites}
-        />
+         textColor={"white"}/>
       </div>
       <p className="w-full bg-endings p-4 text-center text-white">
         For family gatherings, retreats and business travelers our Saco Suites

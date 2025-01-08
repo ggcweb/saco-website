@@ -29,6 +29,7 @@ export function Footer() {
             referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
+      <h4 className="w-full text-center text-sm">A Krishna Garg Production</h4>
     </footer>
   );
 }
