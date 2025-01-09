@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import hiking from "~/static/Pictures/Carousel-Pictures/7405778508_4977b9aea7_m.jpg";
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 export default function Hiking() {
   return (
     <div className="flex flex-col justify-center items-center">
@@ -15,7 +15,7 @@ export default function Hiking() {
           of
           the trail are currently open.</p>
         <p className="p-2"><b>Conway Branch Rail Trail</b>: 21 miles The Conway Branch trail runs
-          for 21 miles along an old rail corridor between State Route 113 in Conway and Polly's Crossing in Ossipee. The
+          for 21 miles along an old rail corridor between State Route 113 in Conway and Polly&#39;s Crossing in Ossipee. The
           trail is popular with snowmobiles and rail car clubs.</p>
         <p className="p-2"><b>East Branch & Zealand Valley Railroad Hike</b>: 18 miles Are you
           looking for a multi-day hike on beautiful rail-trails through pristine wilderness of the White Mountains? Look
@@ -41,14 +41,14 @@ export default function Hiking() {
           end
           of Rocky Branch Road (Jericho Road) to Rocky Branch Shelter #2.</p>
         <p className="p-2"><b>Wild River Tail</b>- 15 miles Most of the Wild River Trail falls
-          within the Wild River Wilderness and is off-limits to bikes. At it's southern end, the trail meets the Wildcat
+          within the Wild River Wilderness and is off-limits to bikes. At it&#39;s southern end, the trail meets the Wildcat
           River Trail, near Bog Brook.</p>
         <p className="p-2"><b>Presidential Range Rail Trail</b>- 18 miles This 18-mile
           Presidential Range Trail runs between Cherry Pond, a great bird-watching venue, and Gorham. The trail skirts
           the
           Presidential Range along the edge of the White Mountain National Forest and passes through Silvio O.</p>
         <p className="p-2"><b>Cotton Valley Railtrail</b>- 7.3 miles On the banks of Lake
-          Winnipesaukee in central New Hampshire, Wolfeboro bills itself as "America's Oldest Summer Resort."
+          Winnipesaukee in central New Hampshire, Wolfeboro bills itself as &#34;America&#39;s Oldest Summer Resort.&#34;
           Vacationers
           have been escaping to this quaint village since passenger rail service began in 1872.</p>
         <p className="p-2"><b>Lincoln Woods Trail</b>- 2.7 miles The Lincoln Woods Trail runs for

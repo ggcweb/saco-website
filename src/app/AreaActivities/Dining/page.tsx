@@ -13,7 +13,6 @@ import jalisco from "~/static/Pictures/Restaurants/JALISCO.jpg"
 import haveli from "~/static/Pictures/Restaurants/open-haveli.webp"
 import oxford from "~/static/Pictures/Restaurants/oxford.jpg"
 import peaches from "~/static/Pictures/Restaurants/peaches.jpg"
-import shalimar from "~/static/Pictures/Restaurants/shalimar.jpg"
 import stonehust from "~/static/Pictures/Restaurants/stonehurst.jpg"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 type cardData = {

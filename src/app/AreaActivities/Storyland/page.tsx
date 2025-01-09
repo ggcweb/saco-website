@@ -1,8 +1,7 @@
 "use client"
 
 import * as React from "react"
-import Image, { type StaticImageData } from "next/image";
-import { ImageSlider } from "~/app/_components/carousel";
+import { type StaticImageData } from "next/image";
 import storyland from "~/static/Pictures/Carousel-Pictures/storyland.jpg";
 import P1 from "~/static/Pictures/Storyland/img.png"
 import P2 from "~/static/Pictures/Storyland/img_1.png"
@@ -32,7 +31,7 @@ export default function Storyland() {
     <>
       <div className="flex flex-col items-center bg-input">
         <h3 className="text-2xl pt-4 underline font-bold">Storyland</h3>
-        <MultiImageSlider data={imageArr} backColor={"#E5E5E5"} cardColor={"#E5E5E5"} link={false}/>
+        <MultiImageSlider data={imageArr} backColor={"#E5E5E5"} cardColor={"#E5E5E5"} link={false} textColor={"black"}/>
         <div className="text-center font-bold text-xl pt-2 p-14">
           A dream come true for all children.
           <br/>

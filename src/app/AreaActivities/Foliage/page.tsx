@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import Image, { type StaticImageData } from "next/image";
+import { type StaticImageData } from "next/image";
 import { MultiImageSlider } from "~/app/_components/multiImageCar";
 import foliage from "~/static/Pictures/foliage/foliage.gif"
 import cathedral from "~/static/Pictures/foliage/CATHEDRALLEDGE.jpg"

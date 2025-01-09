@@ -7,7 +7,7 @@ import attitash from "~/static/Pictures/SummerFun/1604957_10152250495069979_8273
 import monkeyTrunks from "~/static/Pictures/SummerFun/chocorua1.jpg"
 import cranmore from "~/static/Pictures/SummerFun/mtn-coast-pg.jpg"
 import alpine from "~/static/Pictures/SummerFun/3-t.jpg"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 type cardData = {
   title: string;
   picture: StaticImageData;
