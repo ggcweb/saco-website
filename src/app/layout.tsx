@@ -3,7 +3,7 @@ import "~/styles/globals.css";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
-import { TRPCReactProvider } from "~/trpc/react";
+// import { TRPCReactProvider } from "~/trpc/react";
 import { Navbar } from "~/app/_components/navbar";
 import { Footer } from "~/app/_components/footer";
 export const metadata: Metadata = {
@@ -50,7 +50,8 @@ export default function RootLayout({
       </head>
       <body>
         <Navbar />
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        {/*<TRPCReactProvider>{children}</TRPCReactProvider>*/}
+        {children}
         <Footer />
       </body>
     </html>
