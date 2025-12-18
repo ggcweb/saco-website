@@ -3,7 +3,7 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Bed, Tv, Wind, Coffee, Refrigerator, Wifi, Check, Dog } from "lucide-react"
+import { Tv, Wind, Coffee, Refrigerator, Wifi, Check, Dog } from "lucide-react"
 
 // Images
 import DA from "~/static/Pictures/Room-Pictures/double-angle.jpg"

@@ -212,7 +212,7 @@ export default function MainPage() {
                 Located near North Conway, the lodge sits only minutes away from all the fun and adventures the area has to offer. A partial list of what is nearby includes 5 major ski resorts, over 100 shopping outlets, hundreds of miles of hiking and cross country skiing trails, snowmobiling, summertime river canoeing and kayaking, legendary nightspots and over 60 restaurants to choose from.
               </p>
               <p>
-                You name it and you can find it here in the Mt. Washington Valley. Spend the day shopping with your friends at Settler's Green Tax-free outlets, and ask us about our shopping deals!
+                You name it and you can find it here in the Mt. Washington Valley. Spend the day shopping with your friends at Settler&apos;s Green Tax-free outlets, and ask us about our shopping deals!
               </p>
             </div>
             <Link href="/AreaActivities" className="btn-primary mt-8 inline-block">

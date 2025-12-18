@@ -3,7 +3,7 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Flower2, Sun, Leaf, Snowflake, MapPin, ExternalLink, Mountain, ShoppingBag, Music, Tent } from "lucide-react"
+import { Flower2, Sun, Leaf, Snowflake, MapPin, ExternalLink, ShoppingBag, Music, Tent } from "lucide-react"
 import {
   Accordion,
   AccordionContent,
@@ -230,7 +230,7 @@ export default function Activities() {
         <div className="container mx-auto max-w-6xl">
           <h2 className="heading-section text-ocean-deep text-center mb-12">
             <MapPin className="inline-block w-8 h-8 mr-2 mb-1" />
-            What's Nearby
+            What&apos;s Nearby
           </h2>
 
           <div className="grid lg:grid-cols-2 gap-12">
