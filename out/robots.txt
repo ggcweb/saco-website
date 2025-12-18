@@ -1,0 +1,6 @@
+# Robots.txt for Saco River Motor Lodge
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://sacorivermotorlodge.com/sitemap.xml
