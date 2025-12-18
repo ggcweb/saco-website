@@ -1,457 +1,309 @@
 "use client"
 
 import * as React from "react"
-// ShadCN
+import Image from "next/image"
+import Link from "next/link"
+import { Flower2, Sun, Leaf, Snowflake, MapPin, ExternalLink, Mountain, ShoppingBag, Music, Tent } from "lucide-react"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "~/components/ui/accordion"
-import Image, { type StaticImageData } from "next/image";
-// import Link from "next/link"
-// import logo from "~/static/Pictures/srml_logo.jpg";
-// import Image from "next/image";
+import { MultiImageSlider } from "~/app/_components/multiImageCar"
+import type { StaticImageData } from "next/image"
+
+// Images
 import settlers from "~/static/Pictures/outlet.png"
 import stonemount from "~/static/Pictures/stonemount.png"
 import fair from "~/static/Pictures/fryeburgfair_001.png"
 import winter from "~/static/Pictures/amenities/PagePics/winter.png"
 import fall from "~/static/Pictures/amenities/PagePics/fall.png"
-import { Card, CardContent } from "~/components/ui/card";
-import Link from "next/link";
-import mtWashington from "~/static/Pictures/Carousel-Pictures/mtwashington_001.png";
-import hiking from "~/static/Pictures/Carousel-Pictures/7405778508_4977b9aea7_m.jpg";
-import cranmore from "~/static/Pictures/Carousel-Pictures/cranmore.jpg";
-import settlersGreen from "~/static/Pictures/Carousel-Pictures/10041125475_94c67c205d_m.jpg";
-import dine from "~/static/Pictures/Carousel-Pictures/dine.jpg";
-import foliage from "~/static/Pictures/Carousel-Pictures/foliage.png";
-import train from "~/static/Pictures/north-conway-Train-station.jpg";
-import kayak from "~/static/Pictures/Carousel-Pictures/saco-river-canoe.jpg";
-import storyland from "~/static/Pictures/Carousel-Pictures/storyland.jpg";
-import { MultiImageSlider } from "~/app/_components/multiImageCar";
-type cardData = {
-  picture : StaticImageData;
-  desc: string;
-}
+import mtWashington from "~/static/Pictures/Carousel-Pictures/mtwashington_001.png"
+import hiking from "~/static/Pictures/Carousel-Pictures/7405778508_4977b9aea7_m.jpg"
+import settlersGreen from "~/static/Pictures/Carousel-Pictures/10041125475_94c67c205d_m.jpg"
+import dine from "~/static/Pictures/Carousel-Pictures/dine.jpg"
+import foliage from "~/static/Pictures/Carousel-Pictures/foliage.png"
+import train from "~/static/Pictures/north-conway-Train-station.jpg"
+import kayak from "~/static/Pictures/Carousel-Pictures/saco-river-canoe.jpg"
+import storyland from "~/static/Pictures/Carousel-Pictures/storyland.jpg"
+
 type cardDataTwo = {
-  name: string;
-  picture: StaticImageData;
-  link: string;
-};
+  name: string
+  picture: StaticImageData
+  link: string
+}
+
+const seasons = [
+  {
+    id: "spring",
+    name: "Spring",
+    icon: Flower2,
+    color: "from-green-400 to-emerald-500",
+    description: "Spring is a great time to take advantage of the warm weather and blooming flowers. Mt. Washington Valley offers shopping, river rafting, biking, and more!",
+    activities: ["Scenic Hiking", "Bike Riding", "Canoeing/Kayaking", "Tax-Free Outlet Shopping"]
+  },
+  {
+    id: "summer",
+    name: "Summer",
+    icon: Sun,
+    color: "from-yellow-400 to-orange-500",
+    description: "Summer is perfect at Saco River Motor Lodge. With direct river access, swim or canoe the gentle waters of the Saco. Canoe and kayak rentals available for guests!",
+    activities: ["Rock Climbing", "Hiking", "Cycling", "Golfing", "River Activities", "Family Reunions"]
+  },
+  {
+    id: "fall",
+    name: "Fall",
+    icon: Leaf,
+    color: "from-orange-400 to-red-500",
+    description: "Experience New England's famous fall foliage! Don't miss the Fryeburg Fair, Sherman Farm Corn Maze, and Haunted Hay Rides.",
+    activities: ["Leaf Peeping", "Fryeburg Fair", "Corn Maze", "Haunted Hay Ride"],
+    image: fall
+  },
+  {
+    id: "winter",
+    name: "Winter",
+    icon: Snowflake,
+    color: "from-blue-400 to-blue-600",
+    description: "We're open year-round, just minutes from 8 major ski areas. Ski Attitash, Cranmore, Wildcat, Black Mountain, and Shawnee Peak!",
+    activities: ["Attitash Mountain", "Wildcat Mountain", "Mt Cranmore", "Shawnee Peak", "Snowmobiling", "Cross-Country Skiing"],
+    image: winter
+  }
+]
+
+const highlights = [
+  { icon: ShoppingBag, title: "Settler's Green Outlets", description: "Tax-free outlet shopping at over 60 stores including Old Navy, Gap, Banana Republic, and more.", image: settlers },
+  { icon: Music, title: "Stone Mountain Arts Center", description: "A timber frame music hall hosting national acts in a beautiful setting.", image: stonemount },
+  { icon: Tent, title: "Fryeburg Fair", description: "8 days of entertainment, great food, games, prizes, and rides for all ages.", image: fair },
+]
+
+const nearbyAttractions = [
+  { name: "Saco River", distance: "Right behind us!" },
+  { name: "Saco Canoe Rental", distance: "5.5 miles", link: "https://www.sacocanoerental.com/" },
+  { name: "Saco Bound Canoe & Kayak", distance: "Across the road", link: "https://www.sacobound.com/" },
+  { name: "Settler's Green Outlets", distance: "6.0 miles", link: "https://www.settlersgreen.com/" },
+  { name: "Stone Mountain Art Center", distance: "9.6 miles", link: "https://stonemountainartscenter.com/" },
+  { name: "Fryeburg Fairgrounds", distance: "4.2 miles", link: "https://www.fryeburgfair.org/" },
+  { name: "Kancamagus Highway", distance: "8.1 miles", link: "https://kancamagushighway.com/" },
+  { name: "Cathedral Ledge", distance: "9.9 miles" },
+  { name: "Mt Washington Observatory", distance: "8.2 miles", link: "https://mountwashington.org/" },
+  { name: "Diana's Baths", distance: "10.6 miles", link: "https://northconwaynh.com/dianas-baths.html" },
+  { name: "Conway Scenic Railroad", distance: "8.0 miles", link: "https://www.conwayscenic.com/" },
+  { name: "Storyland", distance: "14.2 miles", link: "https://www.storylandnh.com/" },
+  { name: "Pirate's Cove Mini Golf", distance: "6.6 miles", link: "https://www.piratescove.net/north-conway/" },
+]
+
+const quickLinks = [
+  { name: "Cranmore Mountain", link: "https://cranmore.com/" },
+  { name: "Conway Scenic Railroad", link: "https://www.conwayscenic.com/" },
+  { name: "Saco Bound", link: "https://www.sacobound.com/" },
+  { name: "Fryeburg Fair", link: "https://www.fryeburgfair.org/" },
+  { name: "Mt Washington Observatory", link: "https://mountwashington.org/" },
+  { name: "Covered Bridges", link: "https://www.visitnh.gov/coveredbridges" },
+  { name: "Great Glen Trails", link: "https://mt-washington.com/" },
+  { name: "Attitash Bear Peak", link: "https://www.attitash.com/" },
+  { name: "Mt Washington Cog Railway", link: "https://www.thecog.com/" },
+  { name: "Clark's Trading Post", link: "https://clarksbears.com/" },
+]
+
 export default function Activities() {
-  const mainThing : cardData[] = [
-    {picture: {settlers}.settlers, desc: "Stay at Saco River Motor Lodge and receive a coupon booklet to shop at Settler’s Green Outlet Village which offers tax free outlet shopping at over 60 factory outlet stores. Shop with all the top brands; from Old Navy, Gap, Banana Republic, adidas, AMERICAN EAGLE OUTFITTERS, Bass, BROOKS BROTHERS, Carters, Dressbarn and many more."},
-    {picture: {stonemount}.stonemount, desc: "Nestled in the foothills of the White Mountains, the Stone Mountain Arts Center is a beautiful timber frame music hall hosting national acts up close and personal in an equally beautiful setting."},
-    {picture: {fair}.fair, desc: "Come enjoy a week’s worth of fun that Maine’s famous Fryeburg Fair has to offer. 8 days of daily entertainment, great food, tons of games and prizes, and rides for all ages. For more information visit: www.fryebrugfair.org"}
+  const activities: cardDataTwo[] = [
+    { name: "Mt Washington", picture: mtWashington, link: "/AreaActivities/MtWashington" },
+    { name: "Hiking", picture: hiking, link: "/AreaActivities/Hiking" },
+    { name: "Settlers Green", picture: settlersGreen, link: "/AreaActivities/SettlersGreen" },
+    { name: "Dining", picture: dine, link: "/AreaActivities/Dining" },
+    { name: "Foliage", picture: foliage, link: "/AreaActivities/Foliage" },
+    { name: "Fryeburg Fair", picture: fair, link: "/AreaActivities/Fair" },
+    { name: "Train", picture: train, link: "/AreaActivities/Train" },
+    { name: "Summer Fun", picture: kayak, link: "/AreaActivities/Kayak" },
+    { name: "Storyland", picture: storyland, link: "/AreaActivities/Storyland" }
   ]
 
-  const activities : cardDataTwo[] = [
-    {name: "Mt Washington", picture: {mtWashington}.mtWashington, link: "/AreaActivities/MtWashington"},
-    {name: "Hiking", picture: {hiking}.hiking, link: "/AreaActivities/Hiking"},
-    // {name: "Cranmore", picture: {cranmore}.cranmore, link: "/AreaActivities/Cranmore"},
-    {name: "Settlers Green", picture: {settlersGreen}.settlersGreen, link: "/AreaActivities/SettlersGreen"},
-    {name: "Dining", picture: {dine}.dine, link: "/AreaActivities/Dining"},
-    {name: "Foliage", picture: {foliage}.foliage, link: "/AreaActivities/Foliage"},
-    {name: "Fryeburg Fair", picture: {fair}.fair, link: "/AreaActivities/Fair"},
-    {name: "Train", picture: {train}.train, link: "/AreaActivities/Train"},
-    {name: "Summer Fun", picture: {kayak}.kayak, link: "/AreaActivities/Kayak"},
-    {name: "Storyland", picture: {storyland}.storyland, link: "/AreaActivities/Storyland"}
-  ]
   return (
     <>
-      <h3 className="pt-2 text-center text-2xl font-bold">
-        Come enjoy all the seasons with us!
-      </h3>
-      <MultiImageSlider data={activities} backColor={"white"} textColor={"white"} cardColor={"rgb(4, 97, 154)"} link={true}/>
-      <Accordion type="multiple">
-        <AccordionItem value="spring">
-          <AccordionTrigger className="m-8 mb-0 mt-2 w-8/12 bg-red-600 text-white">
-            <p className="w-8/12 pl-4">Spring</p>
-          </AccordionTrigger>
-          <AccordionContent className="ml-8 mr-8 bg-accent p-4">
-            <div className="p-4 text-center text-lg">
-              Spring is a great time to take advantage of the warm weather and
-              blooming flowers. Mt. Washington Valley offers a variety of
-              activities to do this time of year including shopping, river
-              rafting, biking, and more!
-              Settler’s Green Outlets: Its a shoppers paradise where you will find sales in over 100 tax-free outlets, country stores, and boutiques.
-            </div>
+      {/* Hero Section */}
+      <section className="relative py-24 bg-ocean-deep">
+        <div className="container mx-auto max-w-6xl px-4 text-center text-white">
+          <h1 className="heading-display mb-4 animate-fade-in-up">
+            Area Activities
+          </h1>
+          <p className="text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+            Come enjoy all the seasons with us in the Mt. Washington Valley!
+          </p>
+        </div>
+      </section>
+
+      {/* Activities Carousel */}
+      <section className="py-8 bg-ocean-deep">
+        <MultiImageSlider
+          data={activities}
+          backColor={"rgb(12, 74, 110)"}
+          textColor={"white"}
+          cardColor={"rgb(12, 74, 110)"}
+          link={true}
+        />
+      </section>
+
+      {/* Seasonal Activities */}
+      <section className="section-padding bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="heading-section text-ocean-deep text-center mb-8">
+            Activities by Season
+          </h2>
+
+          <Accordion type="multiple" className="space-y-4">
+            {seasons.map((season) => (
+              <AccordionItem
+                key={season.id}
+                value={season.id}
+                className="border rounded-2xl overflow-hidden shadow-sm"
+              >
+                <AccordionTrigger className={`px-6 py-4 bg-gradient-to-r ${season.color} text-white hover:no-underline`}>
+                  <div className="flex items-center gap-3">
+                    <season.icon className="w-6 h-6" />
+                    <span className="text-xl font-display font-semibold">{season.name}</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="p-6 bg-secondary/30">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <p className="text-muted-foreground mb-4">{season.description}</p>
+                      <ul className="grid grid-cols-2 gap-2">
+                        {season.activities.map((activity) => (
+                          <li key={activity} className="flex items-center gap-2 text-sm">
+                            <span className="text-red-500">•</span>
+                            {activity}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    {season.image && (
+                      <div className="rounded-xl overflow-hidden">
+                        <Image
+                          src={season.image}
+                          alt={`${season.name} activities`}
+                          className="w-full h-48 object-cover"
+                        />
+                      </div>
+                    )}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* Featured Highlights */}
+      <section className="section-padding bg-secondary/30">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="heading-section text-ocean-deep text-center mb-12">
+            Featured Attractions
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {highlights.map((item, index) => (
+              <div
+                key={item.title}
+                className="bg-white rounded-2xl p-6 shadow-lg card-hover animate-fade-in-up"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-ocean-deep/10 flex items-center justify-center">
+                    <item.icon className="w-6 h-6 text-ocean-deep" />
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-ocean-deep">{item.title}</h3>
+                </div>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-32 object-contain mb-4"
+                />
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Distances & Links */}
+      <section className="section-padding bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="heading-section text-ocean-deep text-center mb-12">
+            <MapPin className="inline-block w-8 h-8 mr-2 mb-1" />
+            What's Nearby
+          </h2>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Distances */}
             <div>
-              <ul className="flex flex-row justify-evenly font-bold underline">
-                <li>Scenic Hiking</li>
-                <li>Bike Riding</li>
-                <li>Canoeing/Kayaking</li>
-              </ul>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="summer">
-          <AccordionTrigger className="m-8 mb-0 mt-0 w-8/12 bg-red-600 text-white">
-            <p className="w-8/12 pl-4">Summer</p>
-          </AccordionTrigger>
-          <AccordionContent className="ml-8 mr-8 bg-accent p-4">
-            <div className="p-4 text-center text-lg">
-              Summer is the perfect time to spend in Mt. Washington Valley and
-              especially at Saco River Motor Lodge and Suites. Our Lodge is a
-              special resting place away from the crowds and congestion. With
-              direct river access, you can swim or canoe the gentle waters of
-              the Saco. Canoe and kayak rentals are available for our guests and
-              Conway Lake is only just over a mile away. The Saco River Lodge
-              and Suites is also a great place to have a family reunion.
-            </div>
-            <div className="flex flex-col justify-evenly lg:flex-row">
-              <ul>
-                <li className="font-bold underline">The Great Outdoors</li>
-                <li>Rock Climbing</li>
-                <li>Hiking</li>
-                <li>Cycling</li>
-                <li>Northern Extremes Canoe and Kayak</li>
-              </ul>
-              <ul>
-                <li className="font-bold underline">Golfing</li>
-                <li>Androscoggin Valley Country Club</li>
-                <li>Hale’s Location Golf Course</li>
-                <li>North Conway Country Club</li>
-                <li>Province Lake Golf Course</li>
-                <li>Indian Mound Golf Club</li>
-                <li>Waumbek Golf Club</li>
-                <li>Wentworth Golf Club</li>
-                <li>Mountain View Grand Resort & Spa Golf Course</li>
-                <li> Bridgton Highlands Country Club</li>
-                <li>Lake Kezar Country Club</li>
-                <li>Omni Mount Washington Golf Club</li>
-              </ul>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="fall">
-          <AccordionTrigger className="m-8 mb-0 mt-0 w-8/12 bg-red-600 text-white">
-            <p className="w-8/12 pl-4">Fall</p>
-          </AccordionTrigger>
-          <AccordionContent className="ml-8 mr-8 bg-accent p-4">
-            <div className="flex flex-col">
-              <Image src={fall} alt="" className="w-full"></Image>
-              <div className="p-4 text-center text-lg">
-                Leaf Peeking in New England, <b>FRYEBURG FAIR</b>, Sherman Farm
-                Corn Maze and Haunted Hay Ride
-              </div>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="winter">
-          <AccordionTrigger className="m-8 mb-0 mt-0 w-8/12 bg-red-600 text-white">
-            <p className="w-8/12 pl-4">Winter</p>
-          </AccordionTrigger>
-          <AccordionContent className="ml-8 mr-8 bg-accent p-4">
-            <div className="flex flex-col justify-center">
-              <Image src={winter} alt="" className="w-full"></Image>
-              <div className="p-4 text-center text-lg">
-                We’re open year round, and we’re just minutes away from 8 major
-                ski areas. Ski the world-class slopes of Attitash/Bear Peak,
-                Cranmore, Wildcat, Black Mountain, and Shawnee Peak. If
-                cross-country skiing or snowmobiling are your passion, over 65
-                kilometers of groomed trails are available throughout the
-                area.Here in the Mount Washington Valley, there’s something for
-                everyone!
-              </div>
-              <div className="flex flex-row justify-evenly">
-                <div className="flex flex-col text-base">
-                  <ul>
-                    <li className="font-bold underline">
-                      Ski Season/ Snowboarding
+              <h3 className="font-display text-xl font-semibold text-ocean-deep mb-6">
+                Distances from SRML
+              </h3>
+              <div className="bg-secondary/30 rounded-2xl p-6">
+                <ul className="space-y-3">
+                  {nearbyAttractions.map((item) => (
+                    <li key={item.name} className="flex items-center justify-between py-2 border-b border-white/50 last:border-0">
+                      {item.link ? (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-ocean-deep hover:text-red-500 transition-colors flex items-center gap-1"
+                        >
+                          {item.name}
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      ) : (
+                        <span className="text-foreground">{item.name}</span>
+                      )}
+                      <span className="text-sm text-muted-foreground">{item.distance}</span>
                     </li>
-                    <li>Attitash Mountain</li>
-                    <li>Black Mountain</li>
-                    <li>Mt Cranmore</li>
-                    <li>Wildcat Mountain</li>
-                    <li>King Pine</li>
-                    <li>Shawnee Peak</li>
-                    <li>Bretton Woods</li>
-                    <li>Bear Notch Jackson</li>
-                  </ul>
-                </div>
-
-                <div className="flex flex-col text-base">
-                  <ul>
-                    <li className="font-bold underline">Snowmobiling</li>
-                    <li>Fryeburg Snowmobile Rental</li>
-                    <li>Northern Extremes Snowmobiling</li>
-                  </ul>
-                </div>
+                  ))}
+                </ul>
               </div>
             </div>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
 
-      <div className="flex flex-col justify-evenly lg:flex-row">
-        {mainThing.map((card, index) => (
-          <Card className="border-none" key={index}>
-            <CardContent className="flex flex-col items-center justify-center rounded-xl p-4 text-center">
-              <Image src={card.picture} alt="" className="h-40 w-40" />
-              <p className="text-sm">{card.desc}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+            {/* Quick Links */}
+            <div>
+              <h3 className="font-display text-xl font-semibold text-ocean-deep mb-6">
+                Quick Links
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {quickLinks.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 p-3 bg-secondary/30 rounded-xl hover:bg-ocean-deep hover:text-white transition-colors group"
+                  >
+                    <ExternalLink className="w-4 h-4 text-ocean-deep group-hover:text-white" />
+                    <span className="text-sm">{item.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div className="flex flex-col items-center lg:items-baseline lg:flex-row justify-evenly text-center">
-        <div className="flex w-1/2 flex-col p-8">
-          <h3 className="pt-2 text-xl font-bold">
-            What to Do and How Far it is From SRML
-          </h3>
-          <ul>
-            <li>SACO RIVER Right behind us!</li>
-            <li>
-              <Link
-                href="https://www.sacocanoerental.com/"
-                className="text-endings underline"
-              >
-                SACO CANOE RENTAL COMPANY{" "}
-              </Link>
-              5.5 miles- 8 minutes
-            </li>
-            <li>
-              <Link
-                href="https://www.sacobound.com/"
-                className="text-endings underline"
-              >
-                SACO BOUND CANOE AND KAYAK
-              </Link>{" "}
-              right across the road
-            </li>
-            <li>
-              <Link
-                href="https://www.settlersgreen.com/"
-                className="text-endings underline"
-              >
-                SETTLER’S GREEN OUTLET SHOPPING CENTER
-              </Link>{" "}
-              6.0 miles- 10 minutes
-            </li>
-            <li>
-              <Link
-                href="https://stonemountainartscenter.com/"
-                className="text-endings underline"
-              >
-                STONE MOUNTAIN ART CENTER 9.6 miles
-              </Link>
-              - 21 minutes
-            </li>
-            <li>WESTON’S BEACH 3.3 miles- 5 minutes</li>
-            <li>
-              <Link
-                href="https://www.traillink.com/trail/mountain-division-trail/"
-                className="text-endings underline"
-              >
-                MOUNTAIN DIVISION TRAIL
-              </Link>{" "}
-              (4.2 MILES OF PAVED RD) 4.1 miles- 7 minutes
-            </li>
-            <li>
-              <Link
-                href="https://www.fryeburgfair.org/"
-                className="text-endings underline"
-              >
-                FRYEBURG FAIRGROUNDS
-              </Link>{" "}
-              4.2 miles- 7 minutes
-            </li>
-            <li>
-              <Link
-                href="https://kancamagushighway.com/"
-                className="text-endings underline"
-              >
-                KANCAMAGUS HIGHWAY
-              </Link>
-              - RT 112 8.1 miles- 13 minutes
-            </li>
-            <li>CATHEDRAL LEDGE 9.9 miles- 18 minutes</li>
-            <li>
-              <Link
-                href="https://mountwashington.org/"
-                className="text-endings underline"
-              >
-                MT WASHINGTON OBSERVATORY WEATHER DISCOVER CENTER
-              </Link>{" "}
-              8.2 miles- 13 minutes
-            </li>
-            <li>
-              <Link
-                href="https://northconwaynh.com/dianas-baths.html"
-                className="text-endings underline"
-              >
-                DIANA’S BATHS 10.6 miles
-              </Link>
-              - 19 minutes
-            </li>
-            <li>
-              <Link
-                href="https://www.mwvmoosetours.com/"
-                className="text-endings underline"
-              >
-                MWV MOOSE BUS TOURS, LLC 8.6 miles
-              </Link>
-              - 14 minutes
-            </li>
-            <li>
-              <Link
-                href="https://www.tripadvisor.com/Attraction_Review-g46186-d624365-Reviews-Schouler_Park-North_Conway_Conway_New_Hampshire.html"
-                className="text-endings underline"
-              >
-                SCHOULER PARK 8.0 miles
-              </Link>
-              - 14 minutes
-            </li>
-            <li>
-              <Link
-                href="https://www.mwvchildrensmuseum.org/"
-                className="text-endings underline"
-              >
-                MWV CHILDREN’S MUSEUM 9.5 miles
-              </Link>
-              - 15 minutes
-            </li>
-            <li>
-              <Link
-                href="https://www.conwayscenic.com/"
-                className="text-endings underline"
-              >
-                CONWAY SCENIC RAILROAD 8.0 miles
-              </Link>
-              - 14 minutes
-            </li>
-            <li>
-              <Link
-                href="https://perfectdomain.com/domain/yourtheatre.com"
-                className="text-endings underline"
-              >
-                M&D PRODUCTIONS 6.3 miles
-              </Link>
-              - 10 minutes
-            </li>
-            <li>
-              <Link
-                href="https://www.summitpost.org/whitehorse-ledge/151832"
-                className="text-endings underline"
-              >
-                WHITE HORSE LEDGE 11.4 miles
-              </Link>
-              - 21 minutes
-            </li>
-            <li>
-              <Link
-                href="https://northconwaycountryclub.com/"
-                className="text-endings underline"
-              >
-                NORTH CONWAY COUNTRY CLUB 8.0 miles
-              </Link>
-              - 14 minutes
-            </li>
-            <li>
-              <Link
-                href="https://www.piratescove.net/north-conway/"
-                className="text-endings underline"
-              >
-                PIRATE’S COVE ADVENTURE MINI GOLF 6.6 miles
-              </Link>
-              - 10 minutes
-            </li>
-            <li>
-              <Link
-                href="https://www.minigolfpros.com/banana-village-north-conway-nh/"
-                className="text-endings underline"
-              >
-                BANANA VILLAGE MINI GOLF 6.2 miles
-              </Link>
-              - 10 minutes
-            </li>
-            <li>MT. WASHINGTON VALLEY THEATRE CO 7.5 miles- 12 minutes</li>
-            <li>
-              <Link
-                href="https://www.storylandnh.com/"
-                className="text-endings underline"
-              >
-                STORYLAND 14.2 miles
-              </Link>
-              - 24 minutes
-            </li>
-            <li>
-              <Link
-                href="https://www.santasvillage.com/"
-                className="text-endings underline"
-              >
-                SANTA’S VILLAGE 54.7 miles
-              </Link>
-              - 1:34 minutes
-            </li>
-            <li>
-              <Link
-                href="https://alpinezipline.com/"
-                className="text-endings underline"
-              >
-                ALPINE ADVENTURES 45 miles
-              </Link>
-              - 1:01 minutes
-            </li>
-          </ul>
+      {/* CTA Section */}
+      <section className="py-16 bg-red-600 text-white text-center">
+        <div className="container mx-auto max-w-4xl px-4">
+          <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">
+            Ready to Explore the Mt. Washington Valley?
+          </h2>
+          <p className="text-white/90 mb-8">
+            Book your stay and experience everything our beautiful region has to offer
+          </p>
+          <Link
+            href="https://reservation.asiwebres.com/v4/RoomAvailability.aspx?id=00e22842fd1a4b53bf3d6654ca2f1b9f&lang=en&Curr=1"
+            className="btn-primary bg-white text-ocean-deep hover:bg-white/90 inline-block"
+          >
+            Book Your Stay
+          </Link>
         </div>
-        <div className="flex w-1/2 flex-col p-8">
-          <h3 className="pt-2 text-xl font-bold">Other Links</h3>
-          <ul className="text-endings underline">
-            <li>
-              <Link href="https://cranmore.com/">Cranmore Rock climbing</Link>
-            </li>
-            <li>
-              <Link href="https://www.conwayscenic.com/">
-                Conway Scenic Railroad
-              </Link>
-            </li>
-            <li>
-              <Link href="https://www.sacobound.com/">Canoe and Kayak</Link>
-            </li>
-            <li>
-              <Link href="https://www.fryeburgfair.org/">Fryeburg Fairf</Link>
-            </li>
-            <li>
-              <Link href="https://mountwashington.org/">
-                Mount Washington Observatory
-              </Link>
-            </li>
-            <li>
-              <Link href="https://www.visitnh.gov/coveredbridges">
-                Covered Bridges
-              </Link>
-            </li>
-            <li>
-              <Link href="https://mt-washington.com/">Great Glen Trails</Link>
-            </li>
-            <li>
-              <Link href="https://www.northernextremes.com/">
-                Outward bound
-              </Link>
-            </li>
-            <li>
-              <Link href="https://www.attitash.com/">Attitash Bear Peak</Link>
-            </li>
-            <li>
-              <Link href="https://www.thecog.com/">
-                Mt Washington Cog Railway
-              </Link>
-            </li>
-            <li>
-              <Link href="https://clarksbears.com/">Clark’s Trading Post</Link>
-            </li>
-            <li>
-              <Link href="https://cranmore.com/">Cranmore Mountain</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+      </section>
     </>
-  );
+  )
 }
-

@@ -1,8 +1,12 @@
-"use client"
-
-import * as React from "react"
+import { type Metadata } from "next";
 import fairLogo from "~/static/Pictures/FairPics/fair-logo.png"
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Fryeburg Fair Lodging - Closest Motel",
+  description: "Stay at the closest motel to the Fryeburg Fair. Saco River Motor Lodge offers comfortable lodging just minutes from Maine's largest agricultural fair.",
+};
+
 export default function Fair() {
   return (
     <>

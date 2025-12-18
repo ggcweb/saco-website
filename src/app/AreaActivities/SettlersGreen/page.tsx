@@ -1,8 +1,12 @@
-"use client"
-
-import * as React from "react"
+import { type Metadata } from "next";
 import settlers from "~/static/Pictures/outlet.png"
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Settlers Green Outlet Village - Tax-Free Shopping",
+  description: "Shop at Settlers Green Outlet Village in North Conway, NH. Over 60 brands, tax-free shopping, and dining just minutes from Saco River Motor Lodge.",
+};
+
 export default function SettlersGreen() {
   return (
     <>
