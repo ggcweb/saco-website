@@ -44,7 +44,7 @@ export default function MtWashington() {
             <p className="mb-4">
               Take a guided tour in an Auto Road van with an experienced and knowledgeable driver and learn about the mountain’s
               ecology, history, legends, and lore. Or you can drive your own vehicle and receive an audio tour on cassette or CD -
-              AND the world famous "THIS CAR CLIMBED MT. WASHINGTON" bumper sticker!
+              AND the world famous &quot;THIS CAR CLIMBED MT. WASHINGTON&quot; bumper sticker!
             </p>
             <p>
               The Auto Road is the oldest manmade attraction in America. Guided tours in Auto Road vans are available from

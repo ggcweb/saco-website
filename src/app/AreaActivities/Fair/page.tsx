@@ -41,8 +41,8 @@ export default function Fair() {
 
           <div className="prose prose-lg max-w-2xl">
             <p className="text-xl leading-relaxed text-muted-foreground">
-              Fryeburg Fair has grown to become Maine's largest agricultural fair complete with six days of harness racing,
-              a farm museum second to none, the world's largest steer and oxen show and a reputation known throughout North America.
+              Fryeburg Fair has grown to become Maine&apos;s largest agricultural fair complete with six days of harness racing,
+              a farm museum second to none, the world&apos;s largest steer and oxen show and a reputation known throughout North America.
             </p>
           </div>
 
