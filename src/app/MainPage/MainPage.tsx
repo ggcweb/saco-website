@@ -54,7 +54,7 @@ export default function MainPage() {
 
   const features = [
     { icon: Waves, title: "Saco River Access", description: "Swim, kayak, canoe or tube down our beautiful riverfront" },
-    { icon: Snowflake, title: "Ski Packages (Unavailable)", description: "Attitash, Wildcat, Cranmore & Shawnee Peak deals" },
+    { icon: Snowflake, title: "Seasonal Packages", description: "Call for more details" },
     { icon: Trees, title: "Outdoor Pool", description: "Large pool with playground and picnic areas" },
     { icon: Dog, title: "Pet Friendly", description: "We welcome your furry family members" },
     { icon: Mountain, title: "White Mountains", description: "Hiking trails and scenic views nearby" },

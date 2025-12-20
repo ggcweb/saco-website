@@ -32,8 +32,8 @@ const amenities = [
   },
   {
     icon: Snowflake,
-    title: "Ski Packages",
-    description: "Special deals with Attitash, Wildcat, Cranmore and Shawnee Peak"
+    title: "Seasonal Packages",
+    description: "Call for more details"
   },
   {
     icon: Dog,
