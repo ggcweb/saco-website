@@ -69,7 +69,7 @@ export default function MainPage() {
       <HeroSection
         backgroundImage={heroImage}
         title="Welcome to Saco River Motor Lodge & Suites"
-        subtitle="Experience the beauty of the White Mountains from our peaceful riverside retreat in Conway, NH"
+        subtitle="Experience the beauty of the White Mountains from our peaceful retreat in Conway, NH"
       />
 
       {/* Welcome Section */}

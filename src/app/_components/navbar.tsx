@@ -27,6 +27,7 @@ export function Navbar() {
   }, [])
 
   const navLinks = [
+    { href: "/", label: "Home" },
     { href: "/RoomsandSuites", label: "Rooms & Suites" },
     { href: "/Amenities", label: "Amenities" },
     { href: "/AreaActivities", label: "Area Activities" },

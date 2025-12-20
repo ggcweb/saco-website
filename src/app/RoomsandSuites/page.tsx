@@ -63,7 +63,7 @@ export default function RoomAndSuites() {
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-deep/90 to-transparent">
                   <h3 className="text-2xl font-display font-semibold text-white">Double Rooms</h3>
-                  <p className="text-white/80">2 Full Beds</p>
+                  <p className="text-white/80">2 Queen Beds</p>
                 </div>
               </div>
               <div className="flex gap-2 overflow-x-auto pb-2">
@@ -105,7 +105,7 @@ export default function RoomAndSuites() {
               ))}
             </div>
             <p className="text-center text-muted-foreground mt-6 max-w-3xl mx-auto">
-              All king rooms and double bedrooms are equipped with either 1 king bed or 2 full beds, flat screen TVs with cable, microwaves, mini-fridges, coffee makers, air conditioners, and bathroom with large showers.
+              All king rooms and double bedrooms are equipped with either 1 king bed or 2 queen beds, flat screen TVs with cable, microwaves, mini-fridges, coffee makers, air conditioners, and bathroom with large showers.
             </p>
           </div>
         </div>

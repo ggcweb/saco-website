@@ -10,7 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "~/components/ui/accordion"
-import { MultiImageSlider } from "~/app/_components/multiImageCar"
+
 import type { StaticImageData } from "next/image"
 
 // Images
@@ -134,14 +134,41 @@ export default function Activities() {
       </section>
 
       {/* Activities Carousel */}
-      <section className="py-8 bg-ocean-deep">
-        <MultiImageSlider
-          data={activities}
-          backColor={"rgb(12, 74, 110)"}
-          textColor={"white"}
-          cardColor={"rgb(12, 74, 110)"}
-          link={true}
-        />
+      {/* Activities Grid */}
+      <section className="section-padding bg-white relative z-10 -mt-12">
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {activities.map((activity, index) => (
+              <Link
+                key={activity.name}
+                href={activity.link}
+                className="group relative block overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
+                    src={activity.picture}
+                    alt={activity.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    placeholder="blur"
+                  />
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+
+                  {/* Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="font-display text-2xl font-bold text-white mb-2">
+                      {activity.name}
+                    </h3>
+                    <div className="flex items-center text-white/80 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                      Explore <span className="ml-2">→</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Seasonal Activities */}
