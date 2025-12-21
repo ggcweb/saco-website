@@ -129,6 +129,49 @@ export default function Amenities() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="section-padding bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="heading-section text-ocean-deep text-center mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            <div className="bg-secondary/30 rounded-2xl p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean-deep mb-2">
+                Does Saco River Motor Lodge have a pool?
+              </h3>
+              <p className="text-muted-foreground">
+                Yes! We have one of the largest pools in the Mt Washington Valley, perfect for families to enjoy during their stay.
+              </p>
+            </div>
+            <div className="bg-secondary/30 rounded-2xl p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean-deep mb-2">
+                Are pets allowed at Saco River Motor Lodge?
+              </h3>
+              <p className="text-muted-foreground">
+                Yes, we are pet-friendly! We allow up to 2 dogs per room/suite. There is a cleaning fee of $25/night for rooms and $50/night for suites. Dogs must be on leash at all times and are not allowed in the pool area.
+              </p>
+            </div>
+            <div className="bg-secondary/30 rounded-2xl p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean-deep mb-2">
+                What amenities are available for families?
+              </h3>
+              <p className="text-muted-foreground">
+                We offer a large outdoor pool, playground for children, soccer field, BBQ grills, fire pits for roasting marshmallows, picnic tables, and direct access to the Saco River for swimming, kayaking, and tubing.
+              </p>
+            </div>
+            <div className="bg-secondary/30 rounded-2xl p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean-deep mb-2">
+                Is WiFi available?
+              </h3>
+              <p className="text-muted-foreground">
+                Yes, we provide free high-speed wireless internet access throughout the property.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-red-600 text-white text-center">
         <div className="container mx-auto max-w-4xl px-4">

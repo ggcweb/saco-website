@@ -314,6 +314,49 @@ export default function Activities() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="section-padding bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="heading-section text-ocean-deep text-center mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            <div className="bg-secondary/30 rounded-2xl p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean-deep mb-2">
+                What activities are available near Saco River Motor Lodge?
+              </h3>
+              <p className="text-muted-foreground">
+                The Mt Washington Valley offers skiing at 5 major resorts, hiking trails, tax-free outlet shopping at Settler&apos;s Green, Storyland theme park, Conway Scenic Railroad, Saco River kayaking and tubing, the Fryeburg Fair, and over 60 restaurants.
+              </p>
+            </div>
+            <div className="bg-secondary/30 rounded-2xl p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean-deep mb-2">
+                How far is the lodge from North Conway?
+              </h3>
+              <p className="text-muted-foreground">
+                We are located just minutes from North Conway, making it easy to access shopping, dining, and attractions.
+              </p>
+            </div>
+            <div className="bg-secondary/30 rounded-2xl p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean-deep mb-2">
+                What ski resorts are nearby?
+              </h3>
+              <p className="text-muted-foreground">
+                We are close to Attitash, Wildcat, Cranmore, Black Mountain, and Shawnee Peak. We offer ski packages - call for details!
+              </p>
+            </div>
+            <div className="bg-secondary/30 rounded-2xl p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean-deep mb-2">
+                Can I go kayaking or tubing on the Saco River?
+              </h3>
+              <p className="text-muted-foreground">
+                Yes! The Saco River is right next to our property. We have canoe and kayak rentals available for guests, and there are also rental companies nearby like Saco Bound.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-red-600 text-white text-center">
         <div className="container mx-auto max-w-4xl px-4">

@@ -1,8 +1,9 @@
 import { type Metadata } from "next";
+import { generateBreadcrumbSchema, generateFAQSchema } from "~/lib/seo-config";
 
 export const metadata: Metadata = {
     title: "Rooms & Suites - King Rooms, Double Rooms & Family Suites",
-    description: "Browse our comfortable accommodations at Saco River Motor Lodge: King rooms, double rooms, and spacious 2-3 bedroom suites with full kitchens. All rooms feature cable TV, A/C, microwave, and mini-fridge. Pet-friendly options available.",
+    description: "Comfortable rooms at Saco River Motor Lodge: King rooms, double rooms & 2-3 bedroom suites with full kitchens. Cable TV, A/C, WiFi. Pet-friendly in Conway NH.",
     keywords: ["Saco River Motor Lodge rooms", "Conway NH hotel rooms", "North Conway suites", "Mt Washington Valley accommodations", "pet friendly hotel rooms NH", "family suites Conway", "motel rooms White Mountains"],
     openGraph: {
         title: "Rooms & Suites at Saco River Motor Lodge | Conway NH Accommodations",
@@ -10,10 +11,27 @@ export const metadata: Metadata = {
     },
 };
 
+const breadcrumbSchema = generateBreadcrumbSchema("/RoomsandSuites/");
+const faqSchema = generateFAQSchema("/RoomsandSuites/");
+
 export default function RoomsLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    return children;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            {faqSchema && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                />
+            )}
+            {children}
+        </>
+    );
 }

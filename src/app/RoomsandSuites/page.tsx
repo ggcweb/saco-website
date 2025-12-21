@@ -239,6 +239,57 @@ export default function RoomAndSuites() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="section-padding bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="heading-section text-ocean-deep text-center mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            <div className="bg-secondary/30 rounded-2xl p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean-deep mb-2">
+                What types of rooms are available?
+              </h3>
+              <p className="text-muted-foreground">
+                We offer King rooms with 1 king bed, Double rooms with 2 queen beds, and spacious Suites with 2-3 bedrooms, full kitchens, and private decks.
+              </p>
+            </div>
+            <div className="bg-secondary/30 rounded-2xl p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean-deep mb-2">
+                What amenities are included in the rooms?
+              </h3>
+              <p className="text-muted-foreground">
+                All rooms include flat screen TV with cable, air conditioning, coffee maker, mini-fridge, microwave, free WiFi, and bathroom with large shower.
+              </p>
+            </div>
+            <div className="bg-secondary/30 rounded-2xl p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean-deep mb-2">
+                What is the check-in and check-out time?
+              </h3>
+              <p className="text-muted-foreground">
+                Check-in is from 4 PM to 9 PM. Check-out is 10 AM for rooms and 10:30 AM for suites.
+              </p>
+            </div>
+            <div className="bg-secondary/30 rounded-2xl p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean-deep mb-2">
+                What is the cancellation policy?
+              </h3>
+              <p className="text-muted-foreground">
+                Cancellations must be made by phone to a staff member. No cancellation is allowed after 48 hours for rooms and 7 days for suites. No cancellations are allowed during Fryeburg Fair week.
+              </p>
+            </div>
+            <div className="bg-secondary/30 rounded-2xl p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean-deep mb-2">
+                Are the rooms non-smoking?
+              </h3>
+              <p className="text-muted-foreground">
+                Yes, all rooms and suites are non-smoking.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-red-600 text-white text-center">
         <div className="container mx-auto max-w-4xl px-4">
